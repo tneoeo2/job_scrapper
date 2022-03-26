@@ -1,0 +1,135 @@
+body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: fit-content;
+  margin:20px 50px;
+  background-size: cover;
+  background-color: rgb(236, 236, 236);
+}
+
+
+#titleWrapper{
+  display: flex;
+  justify-content: center;
+}
+#subTitle{
+  margin: 5px 5px;
+}
+
+#title{
+  display: inline;
+  font-size: 3em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+
+#inputWrapper{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+#input{
+  background-color: white;
+  border: solid;
+  border-color: gray;
+  border-width: thin;
+  border-radius: 15px;
+  height: 100%;
+  outline: none;
+  outline-color: initial;
+  padding-inline-end: 44px;
+  padding-inline-start: 52px;
+  position: relative;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+
+}
+#searchIcon{
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  overflow: hidden;
+  
+}
+
+#searchIcon>img{
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  right: 35px;
+  top: 5px;
+}
+
+#downloadIcon{
+  display: flex;
+  justify-content: end;
+  padding-right: 26px;
+}
+#download{
+text-decoration: none;
+margin: 3px 0;
+font-weight: 500;
+color:black;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid gray;
+  margin: 5px 16px;
+  max-height: 70vh;
+  overflow: scroll;
+}
+
+
+.jobList{
+  border-bottom: 1px solid gray;
+  /*border-left: 4px solid;*/
+  
+}
+.jobList:hover{
+  border-bottom: 1px solid rgb(128, 128, 128);
+  background-color: rgb(236, 213, 0);
+}
+
+.jobTitle{
+  font-size:1.30769231rem; 
+  text-decoration: none;
+  color: rgba(11, 54, 146, 0.746);
+}
+.jobTitle a{
+  float:right;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 25px;
+}
+
+.jobTitle a:hover{
+  float:right;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 25px;
+  color:white;
+}
+
+.companyName{
+  font-size:15px;
+}
+.location{
+  font-size:12px;
+  font-style:italic;
+  font-weight: 500;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Job Search</title>
+  <strong><link rel='stylesheet' href="{{url_for('static',filename='css/main.css')}}">
+
+<body>
+  <div id='titleWrapper'>
+    <a id='title' href="/">Job Search</a>
+  </div>
+  <div id="content">
+	<form id='searchForm' action='/report' method='get'>
+  <div id="inputWrapper">
+      <input id="input" placeholder='Search for a job' required name='word'/>
+      <div id="searchIcon">
+       <img onclick="document.getElementById('searchForm').submit();" style='cursor:pointer;' src="{{url_for('static', filename='icon/search-solid.svg')}}"width="3%">
+      </div>
+    </div>
+  </div>
+  <div id='current'>
+  {%for cur in cur_list%}
+      <span class='separ'>&nbsp|&nbsp</span>
+      <span class='cur'> <a href="/report?word={{cur}}">{{cur}}</a> </span>
+   {% endfor %}
+
+   {%if cur_list %}
+      <span class='separ'>&nbsp|&nbsp</span>
+    {% endif %}
+  </div>
+<!--  <button>Search</button> -->
+</body>
+</html>

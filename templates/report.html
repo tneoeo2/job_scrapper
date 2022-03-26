@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Job Search</title>
+    <style>
+        section{
+            display: grid;
+            gap:20px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    </style>
+    <strong><link rel='stylesheet' href="{{url_for('static',filename='/css/report.css')}}">
+    </head>
+    <body>
+    <div id='titleWrapper'>
+    <a id='title' href="/">Job Search</a>
+</div>
+
+<h4 id='subTitle'>Found {{resultsNumber}} results for: {{searchingBy}} </h3>
+
+<div id="content">
+    <form id='searchForm' action='/report' method='get'>
+        <div id="inputWrapper">
+            <input id="input" placeholder='Search for a job' required name='word'/>
+            <div id="searchIcon">
+                <img onclick="document.getElementById('searchForm').submit();" style='cursor:pointer;' src="{{url_for('static', filename='icon/search-solid.svg')}}"width="3%">
+            </div>
+        </div>
+        <div id="downloadIcon">
+            <a id='download' href="/export?word={{searchingBy}}">Export to CSV</a>
+            <!--<img onclick="document.getElementById('download').click();" style='cursor:pointer;' src="{{url_for('static', filename='icon/file-download-solid.svg')}}"width="2%">-->
+        </div>
+      </div>
+    <section>
+        {% for job in jobs %}   
+        <div class='jobList'>
+                <h2 class="jobTitle">{{job.title}}
+                    <a href="{{job.link}}" target='_blank' title='{{job.title}}'>Apply</a>
+                </h2>   
+                <h3 class='jobInfo'>
+                    <span class='companyName'>{{job.company}}</span>
+                    <span class='location'>{{job.location}}</span>
+                </h3>
+            </div>
+            {% endfor %}
+
+<!-- #페이징 추가 -->
+    </section>
+    
+</body>
+</html>
